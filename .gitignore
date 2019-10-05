@@ -1,0 +1,8 @@
+# external dependencies
+node_modules
+
+# coverage
+.nyc_output
+
+# build
+dist
