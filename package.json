@@ -1,0 +1,59 @@
+{
+  "name": "fcc-calculator",
+  "version": "0.1.0",
+  "description": "_A Pen created at CodePen.io. Original URL: [https://codepen.io/PartyLich/pen/xxKNaNx](https://codepen.io/PartyLich/pen/xxKNaNx).",
+  "main": "src/calculator.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "babel-tape-runner ./test/*.test.js",
+    "cov": "nyc babel-tape-runner ./test/*.test.js",
+    "watch": "webpack -w",
+    "build": "npm run clean && webpack --config=webpack.config.js",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "calculator",
+    "frontend",
+    "redux",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "browserslist": "> 0.25%, not dead",
+  "nyc": {
+    "include": [
+      "src/**"
+    ]
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "redux": "^4.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-tape-runner": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.0",
+    "eslint-config-google": "^0.14.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "nyc": "^14.1.1",
+    "rimraf": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "tape": "^4.11.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  }
+}
