@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Syncopate&display=swap&text=0123456789:AMP');
+$syncopate: 'Syncopate', sans-serif;
+
+@mixin calc-font() {
+  font-family: $syncopate;
+}
+
+@mixin rectangle($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+$mobile-break: 600px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $mobile-break) {
+      @content;
+    }
+  }
+}
+
+#calc-root {
+  padding: 5px;
+
+  @include respond-to(mobile) {
+    padding: 0;
+  }
+}
+
+$key-size: 90px;
+$keypad-size: $key-size * 5;
+$gutter: 7px;
+$calc-body-color: #666b77;
+
+.calc {
+  background: $calc-body-color;
+  border-radius: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: $gutter;
+  width: 4 * $key-size;
+
+  @include respond-to(mobile) {
+    width: calc((100vw - #{$gutter * 2}));
+    border-radius: none;
+  }
+}
+
+.calc-keypad {
+  display: flex;
+  flex-wrap: wrap;
+  @include rectangle(5 * $key-size, 3 * $key-size);
+
+  @include respond-to(mobile) {
+    @include rectangle(
+      calc((100vw - #{$gutter * 2}) * 5 / 4),
+      calc((100vw - #{$gutter * 2}) * 3 / 4)
+    );
+  }
+}
+
+.calc-op-pad {
+  @include rectangle($keypad-size, auto);
+  display: flex;
+  flex-direction: column;
+  @include respond-to(mobile) {
+    height: calc((100vw - #{$gutter * 2}) * 5 / 4);
+  }
+}
+
+.calc-button {
+  border-radius: 50%;
+  box-shadow: inset 0 0 20% #fff;
+  background: black;
+  color: white;
+  @include calc-font;
+}
+
+.calc-button:focus {
+  outline: none;
+}
+
+.calc-button--square {
+  @include rectangle($key-size, $key-size);
+
+  @include respond-to(mobile) {
+    $key-size: calc((100vw - #{$gutter * 2}) / 4);
+    @include rectangle($key-size, $key-size);
+  }
+}
+
+.calc-button--tall {
+  @include rectangle(2 * $key-size, $key-size);
+  border-radius: $key-size / 2;
+
+  @include respond-to(mobile) {
+    $key-size: calc((100vw - #{$gutter * 2}) / 4);
+    @include rectangle(calc(2 * (100vw - #{$gutter * 2}) / 4), $key-size);
+    border-radius: $key-size / 2;
+  }
+}
+
+.calc-button--wide {
+  @include rectangle($key-size, 2 * $key-size);
+  border-radius: $key-size / 2;
+
+  @include respond-to(mobile) {
+    $key-size: calc((100vw - #{$gutter * 2}) / 4);
+    @include rectangle($key-size, calc(2 * (100vw - #{$gutter * 2}) / 4));
+    border-radius: $key-size / 2;
+  }
+}
+
+@mixin text-highlight() {
+  text-shadow: 0em 0em 5px #42ff00bd;
+}
+
+$display-row-height: 1.2em;
+$text-color: #cdcdcd;
+$display-bg: #222;
+
+.calc-display {
+  background: $display-bg;
+  border-radius: 5px;
+  box-shadow: inset 0px 6px 11px 3px #0000006e;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7px;
+  width: 100%;
+  @include calc-font;
+  @include text-highlight;
+}
+
+.calc-display__output,
+.calc-display__input {
+  text-align: right;
+  color: $text-color;
+  height: $display-row-height;
+  letter-spacing: 0.12em;
+  overflow-x: hidden;
+  padding: 0.25em;
+  text-overflow: ellipsis;
+}
+
+.calc-display__output {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.calc-display__input {
+}
