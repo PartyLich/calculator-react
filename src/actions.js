@@ -10,6 +10,10 @@ export const OPERATOR_ADD = 'OPERATOR_ADD';
 export const OPERATOR_CLEAR = 'OPERATOR_CLEAR';
 export const OPERATOR_REPLACE = 'OPERATOR_REPLACE';
 
+export const OPERAND_ADD = 'OPERAND_ADD';
+export const OPERAND_CLEAR = 'OPERAND_CLEAR';
+export const OPERAND_APPEND = 'OPERAND_APPEND';
+
 import createAction from './lib/createAction';
 
 export const setInput = createAction(INPUT_SET);
@@ -23,4 +27,8 @@ export const clearOutput = createAction(OUTPUT_CLEAR);
 export const addOperator = createAction(OPERATOR_ADD);
 export const replaceOperator = createAction(OPERATOR_REPLACE);
 export const clearOperator = createAction(OPERATOR_CLEAR);
+
+export const addOperand = createAction(OPERAND_ADD);
+export const appendOperand = createAction(OPERAND_APPEND);
+export const clearOperand = createAction(OPERAND_CLEAR);
 
