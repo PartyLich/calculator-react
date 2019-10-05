@@ -14,6 +14,8 @@ export const OPERAND_ADD = 'OPERAND_ADD';
 export const OPERAND_CLEAR = 'OPERAND_CLEAR';
 export const OPERAND_APPEND = 'OPERAND_APPEND';
 
+export const ISOPERATOR_TOGGLE = 'ISOPERATOR_TOGGLE';
+
 import createAction from './lib/createAction';
 
 export const setInput = createAction(INPUT_SET);
@@ -31,4 +33,6 @@ export const clearOperator = createAction(OPERATOR_CLEAR);
 export const addOperand = createAction(OPERAND_ADD);
 export const appendOperand = createAction(OPERAND_APPEND);
 export const clearOperand = createAction(OPERAND_CLEAR);
+
+export const toggleIsOperator = createAction(ISOPERATOR_TOGGLE);
 
