@@ -9,7 +9,7 @@ const config = {
   // Entry
   entry: {
     calculator: [
-      './src/calculator.js',
+      './src/calculatorApp.js',
     // deepFreeze: './src/deep-freeze.js',
     ],
     vendor: [

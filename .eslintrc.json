@@ -5,6 +5,7 @@
     "node": true
   },
   "extends": "google",
+  "plugins": ["react"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -38,10 +39,9 @@
         "ignoreChainWithDepth": 2
       }
     ],
-    "multiline-ternary": [
-      "error",
-      "always-multiline"
-    ],
-    "object-curly-spacing": ["error", "always"]
+    "multiline-ternary": ["error", "always-multiline"],
+    "object-curly-spacing": ["error", "always"],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   }
 }
