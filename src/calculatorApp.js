@@ -23,6 +23,7 @@ import {
   clearOperand,
   toggleIsOperator,
   resetRoot,
+  ROOT_RESET,
 } from './actions';
 
 import { input, output, operators, operands, isOperator } from './reducers';
@@ -41,7 +42,7 @@ const rootReducer = combineReducers({
 
 const calculatorApp = (state, action) => {
   switch (action.type) {
-    case 'ROOT_RESET':
+    case ROOT_RESET:
       return rootReducer(undefined, action);
   }
   return rootReducer(state, action);
