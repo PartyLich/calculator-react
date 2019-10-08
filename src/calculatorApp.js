@@ -11,9 +11,6 @@ import './style.scss';
 window.React = React;
 
 import {
-  setInput,
-  appendInput,
-  replaceInput,
   setOutput,
   addOperator,
   replaceOperator,
@@ -26,11 +23,15 @@ import {
   ROOT_RESET,
 } from './actions';
 
-import { input, output, operators, operands, isOperator } from './reducers';
+import {
+  output,
+  operators,
+  operands,
+  isOperator,
+} from './reducers';
 
 import { createStore, combineReducers } from 'redux';
 const display = combineReducers({
-  input,
   output,
 });
 const rootReducer = combineReducers({
@@ -77,15 +78,12 @@ const operatorClick = ({
   if (isOperator) {
     if (operands.length === 0) {
       store.dispatch(addOperand(output));
-      store.dispatch(appendInput(output));
     }
 
-    store.dispatch(appendInput(value));
     store.dispatch(addOperator(value));
     store.dispatch(toggleIsOperator());
   } else {
     store.dispatch(replaceOperator(value));
-    store.dispatch(replaceInput(value));
   }
 
   return value;
@@ -102,7 +100,6 @@ const operandClick = ({
     store.dispatch(toggleIsOperator());
   }
 
-  store.dispatch(appendInput(value));
   return value;
 };
 
@@ -113,7 +110,6 @@ const equalClick = ({ operands, operators }) => (value) => {
   if (validExpression(operands, operators)) {
     const result = evaluate(operands, operators).toString();
     store.dispatch(setOutput(result));
-    store.dispatch(setInput(''));
 
     store.dispatch(clearOperator());
     store.dispatch(clearOperand());

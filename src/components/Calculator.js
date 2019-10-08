@@ -57,11 +57,26 @@ export const Calculator = (props) => {
     if (enter) equalClick(props)();
   };
 
+  /**
+   * Create input string from operands and operators
+   * @param  {string[]} operands
+   * @param  {string[]} operators
+   * @return {string}  string representation of current input formula
+   */
+  const formatInput = ({ operands, operators }) => {
+    const _operands = [...operands];
+    return operators.reduce(
+        (acc, op) => acc + ` ${op} ` + (_operands.shift() || ''),
+        _operands.shift()
+    );
+  };
+
   const numpad = [
     ['7', '8', '9'],
     ['4', '5', '6'],
     ['1', '2', '3'],
   ];
+  const display = { output: props.display.output, input: formatInput(props) };
 
   return (
     <div
@@ -69,7 +84,7 @@ export const Calculator = (props) => {
       onKeyDown={handleKeyPress}
       tabIndex="0"
     >
-      <CalcDisplay {...props.display} />
+      <CalcDisplay {...display} />
       <div class="calc-keypad">
         {makeButton('wide')(pipe(
             log,
@@ -96,7 +111,6 @@ Calculator.propTypes = {
   operators: PropTypes.arrayOf(PropTypes.string),
   operands: PropTypes.arrayOf(PropTypes.string),
   display: PropTypes.shape({
-    input: PropTypes.string,
     output: PropTypes.string,
   }),
 
