@@ -16,6 +16,8 @@ export const OPERAND_APPEND = 'OPERAND_APPEND';
 
 export const ISOPERATOR_TOGGLE = 'ISOPERATOR_TOGGLE';
 
+export const ROOT_RESET = 'ROOT_RESET';
+
 import createAction from './lib/createAction';
 
 export const setInput = createAction(INPUT_SET);
@@ -36,3 +38,4 @@ export const clearOperand = createAction(OPERAND_CLEAR);
 
 export const toggleIsOperator = createAction(ISOPERATOR_TOGGLE);
 
+export const resetRoot = createAction(ROOT_RESET);
