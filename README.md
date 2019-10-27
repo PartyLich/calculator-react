@@ -1,3 +1,4 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/cd40a04047930f081aa0/maintainability)](https://codeclimate.com/github/PartyLich/calculator-react/maintainability)
 # fcc-calculator
  _A Pen created at CodePen.io. Original URL: [https://codepen.io/PartyLich/pen/xxKNaNx](https://codepen.io/PartyLich/pen/xxKNaNx).
 
@@ -5,10 +6,10 @@
 
 # setup
 ```
-git clone
-npm install
-npm test
-npm run build
+$ git clone <this repo>
+$ npm install
+$ npm test
+$ npm run build
 ```
 
 # Redux?
