@@ -10,6 +10,8 @@ const initialState = '';
 const operand = (state = initialState, action = {}) => {
   switch (action.type) {
     case OPERAND_APPEND:
+      const doubleDot = (action.payload === '.' && state.substr(-1) === '.');
+      if (doubleDot) return state;
       const appendedValue = state + action.payload;
       return trimLeadZero(appendedValue);
     case OPERAND_ADD:
