@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/cd40a04047930f081aa0/maintainability)](https://codeclimate.com/github/PartyLich/calculator-react/maintainability)
+[![Build Status](https://travis-ci.org/PartyLich/calculator-react.svg?branch=dev)](https://travis-ci.org/PartyLich/calculator-react)
 # fcc-calculator
  _A Pen created at CodePen.io. Original URL: [https://codepen.io/PartyLich/pen/xxKNaNx](https://codepen.io/PartyLich/pen/xxKNaNx).
 
