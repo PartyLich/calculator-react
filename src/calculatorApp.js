@@ -8,7 +8,9 @@ import ReactDOM from 'react-dom';
 
 // Webpack
 import './style.scss';
-window.React = React;
+if (typeof window !== 'undefined') {
+  window.React = React;
+}
 
 import {
   setOutput,
