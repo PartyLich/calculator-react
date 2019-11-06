@@ -1,4 +1,5 @@
 'use strict';
+import register from 'ignore-styles';
 import { test } from 'tape';
 import deepFreeze from '../src/lib/deep-freeze';
 
