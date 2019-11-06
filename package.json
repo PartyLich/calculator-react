@@ -1,6 +1,6 @@
 {
   "name": "fcc-calculator",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "_A Pen created at CodePen.io. Original URL: [https://codepen.io/PartyLich/pen/xxKNaNx](https://codepen.io/PartyLich/pen/xxKNaNx).",
   "main": "src/calculator.js",
   "directories": {
